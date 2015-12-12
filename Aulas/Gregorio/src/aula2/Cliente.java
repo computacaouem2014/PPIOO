@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aula1ex1;
+package aula2;
 
 /**
  *
- * @author guest-icO8VM
+ * @author guest-OWf6WU
  */
-public class ControlarCarro {
-    public static void main(String[] args) {
-        Carro meuCarro = new Carro("Chevet", "Azul", 2.0, 0);
-    }
+public class Cliente {
+    private String nome;
+    private String telefone;
 }
