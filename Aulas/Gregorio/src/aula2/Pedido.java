@@ -9,18 +9,12 @@ import java.util.List;
 
 /**
  *
- * @author guest-OWf6WU
+ * @author w4ll3
  */
 public class Pedido {
     private int numero;
     private List<ItemPedido> itens;
     private Cliente cliente;
-
-    public Pedido(int numero, List<ItemPedido> itens, Cliente cliente) {
-        this.numero = numero;
-        this.itens = itens;
-        this.cliente = cliente;
-    }
 
     public int getNumero() {
         return numero;
@@ -46,7 +40,8 @@ public class Pedido {
         this.cliente = cliente;
     }
     
-    public void insereItemPedido(ItemPedido item) {
+    public void insereItemPedido(int quantidade, Doce doce) {
+        ItemPedido item = new ItemPedido(quantidade, doce, this);
         this.itens.add(item);
     }
     
@@ -64,8 +59,8 @@ public class Pedido {
     
     public String getResumo() {
         StringBuilder resumo = new StringBuilder();
-        for(int i = 0; i < this.itens.size() - 1; i++) {
-            resumo.append(this.itens.get(i).getResumo()).append("\n ");
+        for(int i = 0; i < this.itens.size(); i++) {
+            resumo.append(this.itens.get(i).getResumo()).append("\n");
         }
         return resumo.toString();
     }

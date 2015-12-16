@@ -7,7 +7,7 @@ package aula2;
 
 /**
  *
- * @author guest-OWf6WU
+ * @author w4ll3
  */
 public class Doce {
 
@@ -47,4 +47,11 @@ public class Doce {
     public double getValorTotal() {
         return this.getValorDeCusto() + this.getValorDeLucro();
     }
+
+    @Override
+    public String toString() {
+        return nome + ", " + this.getValorTotal() + "0.";
+    }
+    
+    
 }

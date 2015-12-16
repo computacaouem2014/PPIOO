@@ -7,7 +7,7 @@ package aula2;
 
 /**
  *
- * @author guest-OWf6WU
+ * @author w4ll3
  */
 public class ItemPedido {
 
@@ -49,6 +49,6 @@ public class ItemPedido {
     }
     
     public String getResumo() {
-        return "Quantidade: " + this.getQuantidade() + " Descrição: " + this.doce.getNome();
+        return "   Descrição: " + this.doce.getNome() + "   Quantidade: " + this.getQuantidade();
     }
 }
