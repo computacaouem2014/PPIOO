@@ -10,19 +10,18 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- *
  * @author guest-OWf6WU
  */
 public class Traficante {
 
     public static void main(String[] args) {
 
-        Doce doce3 = new Doce("Chocolate", 2d, 3d);
-        Doce doce4 = new Doce("Pe de Moleque", 1.1d, 3d);
-        Doce doce5 = new Doce("Brigadeiro", 1d, 3d);
-        Doce doce6 = new Doce("Beijinho", 1.5d, 3d);
-        Doce doce7 = new Doce("Paçoca", 2.2d, 3d);
-        Doce doce8 = new Doce("LSD", 2.1d, 3d);
+        Doce doce3 = new Doce("Chocolate", 2, 3);
+        Doce doce4 = new Doce("Pe de Moleque", 1.1, 3);
+        Doce doce5 = new Doce("Brigadeiro", 1, 3);
+        Doce doce6 = new Doce("Beijinho", 1.5, 3);
+        Doce doce7 = new Doce("Paçoca", 2.2, 3);
+        Doce doce8 = new Doce("LSD", 2.1, 3);
 
         Scanner in = new Scanner(System.in);
         int option = 0;
@@ -129,7 +128,6 @@ public class Traficante {
                 System.out.println("O pedido fico o seguinte: ");
                 System.out.println(cliente);
                 System.out.println(vila.getResumo());
-                System.out.println("Total: " + vila.getValorTotal());
             }
         }
     }

@@ -6,7 +6,6 @@
 package aula2;
 
 /**
- *
  * @author w4ll3
  */
 public class ItemPedido {
@@ -40,15 +39,17 @@ public class ItemPedido {
     public void setPedido(Pedido pedido) {
         this.pedido = pedido;
     }
+
     private int quantidade;
     private Doce doce;
     private Pedido pedido;
-    
+
     public double getValorTotal() {
         return this.doce.getValorTotal() * this.getQuantidade();
     }
-    
+
     public String getResumo() {
         return "   Descrição: " + this.doce.getNome() + "   Quantidade: " + this.getQuantidade();
     }
 }
+

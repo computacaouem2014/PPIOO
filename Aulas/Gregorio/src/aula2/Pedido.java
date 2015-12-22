@@ -8,13 +8,13 @@ package aula2;
 import java.util.List;
 
 /**
- *
  * @author w4ll3
  */
 public class Pedido {
-    private int numero;
+    private int numero, totalItens = 0;
     private List<ItemPedido> itens;
     private Cliente cliente;
+    private double total = 0;
 
     public int getNumero() {
         return numero;
@@ -39,29 +39,30 @@ public class Pedido {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-    
+
     public void insereItemPedido(int quantidade, Doce doce) {
         ItemPedido item = new ItemPedido(quantidade, doce, this);
         this.itens.add(item);
+        this.totalItens += quantidade;
     }
-    
+
     public void removeUltimoItemPedido() {
         this.itens.remove(this.itens.size() - 1);
     }
-    
+
     public double getValorTotal() {
-        double total = 0;
-        for(int i = 0; i < this.itens.size() - 1; i++) {
-            total += this.itens.get(i).getValorTotal();
+        for (int i = 0; i < this.itens.size(); i++) {
+            this.total += this.itens.get(i).getValorTotal();
         }
-        return total;
+        return this.total;
     }
-    
+
     public String getResumo() {
         StringBuilder resumo = new StringBuilder();
-        for(int i = 0; i < this.itens.size(); i++) {
+        for (int i = 0; i < this.itens.size(); i++) {
             resumo.append(this.itens.get(i).getResumo()).append("\n");
         }
+        resumo.append("\nValor total: " + this.getValorTotal() + "  Total de itens: " + this.totalItens);
         return resumo.toString();
     }
 }
