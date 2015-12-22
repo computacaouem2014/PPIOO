@@ -11,8 +11,9 @@ public class lanchoneteMain {
         int menu = 1;
         double conta = 0;
         while (menu != 0) {
+            clearScreen();
             menu();
-            if(conta != 0)
+            if (conta != 0)
                 System.out.println("Total conta: " + conta);
             System.out.print("Escolha sua opcao: ");
             menu = in.nextInt();
@@ -51,18 +52,45 @@ public class lanchoneteMain {
                     break;
             }
         }
+        System.out.println("Sua conta deu R$" + conta + ". \nEscolha um dos seguintes metodos de pagamento: ");
+        metodosDePagamento();
+        switch (in.nextInt()) {
+            case 1: {
+                System.out.println("Total: R$" + Pagamentos.AVISTA.calculaTotal(conta));
+            }
+            break;
+            case 2: {
+                System.out.println("Total: R$" + Pagamentos.DEBITO.calculaTotal(conta));
+            }
+
+            break;
+            case 3: {
+                System.out.println("Total: R$" + Pagamentos.CREDITO.calculaTotal(conta));
+            }
+            break;
+        }
+        System.out.println("Muito obrigado pela preferencia. Volte Sempre.");
 
 
     }
 
     public static void menu() {
-        System.out.println("\t Bebidas");
-        System.out.println("1. " + Bebida.REFRI.getNome() + "\t R$" + Bebida.REFRI.getPrecoFinal());
-        System.out.println("2. " + Bebida.AGUA.getNome() + "\t R$" + Bebida.AGUA.getPrecoFinal());
-        System.out.println("3. " + Bebida.SUCO.getNome() + "\t R$" + Bebida.SUCO.getPrecoFinal());
-        System.out.println("\t Comidas");
-        System.out.println("4. " + Comida.FRENCHFRIES.getNome() + "\t R$" + Comida.FRENCHFRIES.getPrecoFinal());
-        System.out.println("5. " + Comida.HAMBURGUER.getNome() + "\t R$" + Comida.HAMBURGUER.getPrecoFinal());
-        System.out.println("6. " + Comida.HOTDOG.getNome() + "\t R$" + Comida.HOTDOG.getPrecoFinal());
+        System.out.println("\t\t Bebidas");
+        System.out.println("1. " + Bebida.REFRI.getNome() + "\t\t\t\t R$" + Bebida.REFRI.getPrecoFinal());
+        System.out.println("2. " + Bebida.AGUA.getNome() + "\t\t\t\t R$" + Bebida.AGUA.getPrecoFinal());
+        System.out.println("3. " + Bebida.SUCO.getNome() + "\t\t\t\t R$" + Bebida.SUCO.getPrecoFinal());
+        System.out.println("\t\t Comidas");
+        System.out.println("4. " + Comida.FRENCHFRIES.getNome() + "\t\t\t\t R$" + Comida.FRENCHFRIES.getPrecoFinal());
+        System.out.println("5. " + Comida.HAMBURGUER.getNome() + "\t\t\t\t R$" + Comida.HAMBURGUER.getPrecoFinal());
+        System.out.println("6. " + Comida.HOTDOG.getNome() + "\t\t\t\t R$" + Comida.HOTDOG.getPrecoFinal());
+    }
+
+    public static void metodosDePagamento() {
+        System.out.println("1. " + Pagamentos.AVISTA.getNome() + ", desconto de " + Pagamentos.AVISTA.getDesconto() + "%.");
+        System.out.println("2. " + Pagamentos.DEBITO.getNome() + ", desconto de " + Pagamentos.DEBITO.getDesconto() + "%.");
+        System.out.println("3. " + Pagamentos.CREDITO.getNome() + ", desconto de " + Pagamentos.CREDITO.getDesconto() + "%.");
+    }
+    public static void clearScreen() {
+        System.out.print("\n\n\n\n\n\n\n\n");
     }
 }
