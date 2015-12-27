@@ -56,7 +56,7 @@ public class Traficante {
                 System.out.println("2 - " + doce4);
                 System.out.println("3 - " + doce5);
                 System.out.println("4 - " + doce6);
-                System.out.println("5- " + doce7);
+                System.out.println("5 - " + doce7);
                 System.out.println("6 - " + doce8);
                 System.out.println("Vai leva o que?");
                 option = in.nextInt();
